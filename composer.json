@@ -6,5 +6,9 @@
             "email": "lauhinmihail@yandex.ru"
         }
     ],
+    "description": "My first educational project from Hexlet",
+    "bin": [
+	 "bin/brain-games"
+    ],
     "require": {}
 }
