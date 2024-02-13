@@ -3,7 +3,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/30ec7ff363754fcc95a9/maintainability)](https://codeclimate.com/github/LaukhinMikhail/php-project-45/maintainability)
 
-### Usage cases:
+### Brain-even. Usage cases:
 Try to make install in project:
 https://asciinema.org/a/wTFIOnhv1XDchQLEgJcGhtn24
 
@@ -12,3 +12,10 @@ https://asciinema.org/a/fP4F6lnG2FuNPTnzl7d1M0vsM
 
 Successful game attempt:
 https://asciinema.org/a/WltFrk4mTTvzqtagA2vCG3zZ5
+
+### Brain-calc. Usage cases:
+Try to brain-calc game (failed):
+https://asciinema.org/a/jZFaylBoVYnv7jhneYwfccRMm
+
+Successful brain-calc attempt:
+https://asciinema.org/a/YjpawVNF4CDhq7IUWsblshLdg
