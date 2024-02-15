@@ -12,28 +12,12 @@ function greeting()
     return $name;
 }
 
-function brainEven()
+function gcd($num1, $num2)
 {
-    
-    
-    print_r ("Welcome to the Brain Games!
-Answer \"yes\" if the number is even, otherwise answer \"no\".
-\n\n");
-
-    $trueCount = 0;
-    $movesNum = 3;
-
-    while ($trueCount < $movesNum) {
-        $randomNumber = rand(1, 99);
-        $currentResponse = $randomNumber % 2 === 0 ? 'Yes' : 'No';
-        print_r ("Question: " . $randomNumber . "\n" . "Your answer: " . "\n");
-
-        $response = trim(fgets(STDIN));
-        if ($response != $currentResponse) {
-            return print_r("\"{$response}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!\n");
-        }
-
-    $trueCount++;
+    $gcd = $num1 <= $num2 ? $num1 : $num2;
+    while (!($num1 % $gcd === 0 && $num2 % $gcd === 0)) {
+        $gcd--;
+        //print_r ("Первое число - {$num1}, второе число - {$num2}, делитель - ${gcd}\n");
     }
-    print_r ("Congratulations, " . $name . "!\n");
+    return $gcd;
 }

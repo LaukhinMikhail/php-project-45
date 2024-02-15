@@ -18,34 +18,20 @@ if (file_exists($autoloadPath1)) {
 $name = BrainGames\Engine\greeting();
 
 print_r ("Welcome to the Brain Games!
-What is the result of the expression?.
+Find the greatest common divisor of given numbers.
 \n");
 
 $trueCount = 0;
 $movesNum = 3;
-$operands = ['+', '-', '*'];
 
- 
+
 while ($trueCount < $movesNum) {
     $randomNumber1 = rand(1, 99);
     $randomNumber2 = rand(1, 99);
-    $numOperand = rand(0, 2);
-    switch ($numOperand) {
-        case 0:
-            $currentResponse = $randomNumber1 + $randomNumber2;
-            break;
-        case 1:
-            $currentResponse = $randomNumber1 - $randomNumber2;
-            break;
-        case 2:
-            $currentResponse = $randomNumber1 * $randomNumber2;
-            break;
-    }
+    $currentResponse = BrainGames\Engine\gcd($randomNumber1, $randomNumber2);
+         
+    print_r ("Question: " . $randomNumber1 . " " . $randomNumber2 . ". Your answer: " . "\n");
     
-    //print_r ($currentResponse);
-    print_r ("Question: " . $randomNumber1 . $operands[$numOperand] . $randomNumber2 . ". Your answer: " . "\n");
-    
-
     $response = trim(fgets(STDIN));
     if ($response != $currentResponse) {
         print_r("\"{$response}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!\n");

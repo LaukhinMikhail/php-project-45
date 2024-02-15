@@ -19,3 +19,10 @@ https://asciinema.org/a/jZFaylBoVYnv7jhneYwfccRMm
 
 Successful brain-calc attempt:
 https://asciinema.org/a/YjpawVNF4CDhq7IUWsblshLdg
+
+### Brain-gcd. Usage cases:
+Try to brain-gcd game (failed):
+https://asciinema.org/a/Cg5ZB8uV7TszK2Ka8OxEpkD1A
+
+Successful brain-gcd attempt:
+https://asciinema.org/a/36s50RyFufCfjg44rGm9wJ2Ad
