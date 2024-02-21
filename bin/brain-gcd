@@ -29,7 +29,7 @@ while ($iterationNumber <= $movesCount) {
         showSuccesfulGameEnding($name);
         break;
     }
-    $currentResponse = generateGCD();
+    $currentResponse = generateProgression();
     $actualResponse = getResponse();
       
     if (isResponseCorrect($actualResponse, $currentResponse)) {

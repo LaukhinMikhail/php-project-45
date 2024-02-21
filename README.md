@@ -26,3 +26,10 @@ https://asciinema.org/a/Cg5ZB8uV7TszK2Ka8OxEpkD1A
 
 Successful brain-gcd attempt:
 https://asciinema.org/a/36s50RyFufCfjg44rGm9wJ2Ad
+
+### Brain-progression. Usage cases:
+Try to progression game (failed):
+https://asciinema.org/a/dgzP87SU8unfYBlV2qa0buiyX
+
+Successful progression-game attempt:
+https://asciinema.org/a/fHtUnYnfMiKYW2j1cyEiIe6I5

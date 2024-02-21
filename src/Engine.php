@@ -48,8 +48,8 @@ function generateRemainderOfDivision()
 {
     $randomNumber = rand(1, 99);
     print_r ("Question: " . $randomNumber . "\n" . "Your answer: " . "\n");
-    $currentReponse = $randomNumber % 2 === 0 ? 'Yes' : 'No';
-    return $currentReponse;
+    $currentResponse = $randomNumber % 2 === 0 ? 'Yes' : 'No';
+    return $currentResponse;
 }
 
 function generateCalc()
@@ -90,5 +90,19 @@ function generateGCD()
 
 function generateProgression()
 {
+    $porgressionLenght = rand(5, 10);
+    $hidenElementPosition = rand(0, $porgressionLenght - 1);
+    $progressionStep = rand(2, 50);
+    $firstElement = rand(2, 30);
+    $progression = [];
+    $progression[] = $firstElement;
 
+    for($i = 0; $i <= $porgressionLenght - 1; $i++) {
+        $firstElement += $progressionStep;
+        $progression[] = $firstElement;
+    }
+    $currentResponse = $progression[$hidenElementPosition];
+    $progression[$hidenElementPosition] = '..';
+    print_r ("Question: " . implode(' ', $progression) . ".\nYour answer: ");
+    return $currentResponse;
 }
