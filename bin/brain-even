@@ -15,29 +15,28 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-$name = BrainGames\Engine\greeting();
+$name = greeting();
 
 print_r ("Welcome to the Brain Games!
 Answer \"yes\" if the number is even, otherwise answer \"no\".
-\n\n");
+\n");
 
-$trueCount = 0;
-$movesNum = 3;
+$movesCount = getMaximumMovesNumber();
+$iterationNumber = 0;
 
-while ($trueCount < $movesNum) {
-    $randomNumber = rand(1, 99);
-    $currentResponse = $randomNumber % 2 === 0 ? 'Yes' : 'No';
-    print_r ("Question: " . $randomNumber . "\n" . "Your answer: " . "\n");
-
-    $response = trim(fgets(STDIN));
-    if ($response != $currentResponse) {
-        print_r("\"{$response}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!\n");
+while ($iterationNumber <= $movesCount) {
+    if ($iterationNumber === $movesCount) {
+        showSuccesfulGameEnding($name);
         break;
     }
-
-    $trueCount++;
-    
-    if ($trueCount === $movesNum) {
-        print_r ("Congratulations, " . $name . "!\n");
+    $currentResponse = generateRemainderOfDivision();
+    $actualResponse = getResponse();
+      
+    if (isResponseCorrect($actualResponse, $currentResponse)) {
+        $iterationNumber++;
+    }
+    else {
+        showFailMessage($name, $actualResponse, $currentResponse);
+        break;
     }
 }

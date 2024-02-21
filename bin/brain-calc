@@ -15,6 +15,35 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
+$name = greeting();
+
+print_r ("Welcome to the Brain Games!
+What is the result of the expression?.
+\n");
+
+$movesCount = getMaximumMovesNumber();
+$iterationNumber = 0;
+
+
+while ($iterationNumber <= $movesCount) {
+    if ($iterationNumber === $movesCount) {
+        showSuccesfulGameEnding($name);
+        break;
+    }
+    $currentResponse = generateCalc();
+    $actualResponse = getResponse();
+      
+    if (isResponseCorrect($actualResponse, $currentResponse)) {
+        $iterationNumber++;
+    }
+    else {
+        showFailMessage($name, $actualResponse, $currentResponse);
+        break;
+    }
+}
+
+/*
+
 $name = BrainGames\Engine\greeting();
 
 print_r ("Welcome to the Brain Games!
@@ -58,3 +87,4 @@ while ($trueCount < $movesNum) {
         print_r ("Congratulations, " . $name . "!\n");
     }
 }
+*/
