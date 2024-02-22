@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+
+
+<?php
+
+// Путь который будет использован при глобальной установке пакета
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+
+// Путь для локальной работы с проектом
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+$name = greeting();
+
+print_r ("Welcome to the Brain Games!
+What number is missing in the progression?
+\n");
+
+$movesCount = getMaximumMovesNumber();
+$iterationNumber = 0;
+
+while ($iterationNumber <= $movesCount) {
+    if ($iterationNumber === $movesCount) {
+        showSuccesfulGameEnding($name);
+        break;
+    }
+    $currentResponse = generateSimpleNum();
+    $actualResponse = getResponse();
+      
+    if (isResponseCorrect($actualResponse, $currentResponse)) {
+        $iterationNumber++;
+    }
+    else {
+        showFailMessage($name, $actualResponse, $currentResponse);
+        break;
+    }
+}

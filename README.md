@@ -33,3 +33,10 @@ https://asciinema.org/a/dgzP87SU8unfYBlV2qa0buiyX
 
 Successful progression-game attempt:
 https://asciinema.org/a/fHtUnYnfMiKYW2j1cyEiIe6I5
+
+### Brain-prime. Usage cases:
+Try to brain-prime game (failed):
+https://asciinema.org/a/OTusMzihFGVca5Nni7u3x6PZt
+
+Successful brain-prime game attempt:
+https://asciinema.org/a/P3UsrlukqXtjaKrzFqbjv81y5

@@ -32,10 +32,8 @@ function getResponse()
 function greeting()
 {
     echo "May I have your name?\n";
-
     $name = trim(fgets(STDIN));
     echo "Hello, {$name}!\n";
-
     return $name;
 }
 
@@ -69,7 +67,6 @@ function generateCalc()
             $currentResponse = $randomNumber1 * $randomNumber2;
             break;
     }
-
     print_r ("Question: " . $randomNumber1 . $operands[$numOperand] . $randomNumber2 . ". Your answer: " . "\n");
     return $currentResponse;
 }
@@ -78,10 +75,8 @@ function generateGCD()
 {
     $randomNumber1 = rand(1, 99);
     $randomNumber2 = rand(1, 99);
-
     print_r ("Question: " . $randomNumber1 . " " . $randomNumber2 . ". Your answer: " . "\n");
-
-    $gcd = $randomNumber1 <= $randomNumber2 ? $randomNumber1 : $randomNumber2; //Находим правильный ответ и возвращаем
+    $gcd = $randomNumber1 <= $randomNumber2 ? $randomNumber1 : $randomNumber2; //Находим НОД и возвращаем
     while (!($randomNumber1 % $gcd === 0 && $randomNumber2 % $gcd === 0)) {
         $gcd--;
     }
@@ -104,5 +99,17 @@ function generateProgression()
     $currentResponse = $progression[$hidenElementPosition];
     $progression[$hidenElementPosition] = '..';
     print_r ("Question: " . implode(' ', $progression) . ".\nYour answer: ");
+    return $currentResponse;
+}
+
+function generateSimpleNum()
+{
+    $randomNumber = rand(2, 99);
+    $gcd = $randomNumber - 1;
+    while($randomNumber % $gcd != 0) {
+        $gcd--;
+    }
+    $currentResponse = $gcd === 1 ? 'Yes' : 'No';
+    print_r ("Question: " . $randomNumber . ".\nYour answer: ");
     return $currentResponse;
 }
