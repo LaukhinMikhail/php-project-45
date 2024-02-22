@@ -15,7 +15,7 @@ namespace BrainGames\Engine;
 function isResponseCorrect($actualResponse, $currentResponse)
 {
     if ($actualResponse == $currentResponse) {
-        //print_r("Current!\n");
+        //print_r("Correct!\n");
         return true;
     } else {
         return false;
@@ -29,7 +29,7 @@ function showFailMessage($name, $actualResponse, $currentResponse)
 
 function showSuccesfulGameEnding($name)
 {
-    return print_r("Congratulations, " . $name . "!\n");
+    return print_r("Congratulations, {$name}!\n");
 }
 
 function getResponse()
@@ -53,7 +53,7 @@ function getMaximumMovesNumber()
 function generateRemainderOfDivision()
 {
     $randomNumber = rand(1, 99);
-    print_r("Question: " . $randomNumber . "\n" . "Your answer: " . "\n");
+    print_r("Question: {$randomNumber}\nYour answer: \n");
     $currentResponse = $randomNumber % 2 === 0 ? 'Yes' : 'No';
     return $currentResponse;
 }
@@ -75,7 +75,8 @@ function generateCalc()
             $currentResponse = $randomNumber1 * $randomNumber2;
             break;
     }
-    print_r("Question: " . $randomNumber1 . $operands[$numOperand] . $randomNumber2 . ". Your answer: " . "\n");
+    $currentOperand = $operands[$numOperand];
+    print_r("Question: {$randomNumber1} {$currentOperand} {$randomNumber2}. Your answer: \n");
     return $currentResponse;
 }
 
@@ -83,7 +84,7 @@ function generateGCD()
 {
     $randomNumber1 = rand(1, 99);
     $randomNumber2 = rand(1, 99);
-    print_r("Question: " . $randomNumber1 . " " . $randomNumber2 . ". Your answer: " . "\n");
+    print_r("Question: {$randomNumber1} {$randomNumber2}. Your answer: \n");
     $gcd = $randomNumber1 <= $randomNumber2 ? $randomNumber1 : $randomNumber2; //Находим НОД и возвращаем
     while (!($randomNumber1 % $gcd === 0 && $randomNumber2 % $gcd === 0)) {
         $gcd--;
@@ -106,7 +107,8 @@ function generateProgression()
     }
     $currentResponse = $progression[$hidenElementPosition];
     $progression[$hidenElementPosition] = '..';
-    print_r("Question: " . implode(' ', $progression) . ".\nYour answer: ");
+    $stringProgression = implode(' ', $progression);
+    print_r("Question: {$stringProgression}\nYour answer: ");
     return $currentResponse;
 }
 
@@ -118,6 +120,6 @@ function generateSimpleNum()
         $gcd--;
     }
     $currentResponse = $gcd === 1 ? 'Yes' : 'No';
-    print_r("Question: " . $randomNumber . ".\nYour answer: ");
+    print_r("Question: {$randomNumber}\nYour answer: ");
     return $currentResponse;
 }
