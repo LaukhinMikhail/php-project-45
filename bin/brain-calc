@@ -1,6 +1,5 @@
 #!/usr/bin/env php
 
-
 <?php
 
 // Путь который будет использован при глобальной установке пакета
@@ -17,13 +16,12 @@ if (file_exists($autoloadPath1)) {
 
 $name = greeting();
 
-print_r ("Welcome to the Brain Games!
+print_r("Welcome to the Brain Games!
 What is the result of the expression?.
 \n");
 
 $movesCount = getMaximumMovesNumber();
 $iterationNumber = 0;
-
 
 while ($iterationNumber <= $movesCount) {
     if ($iterationNumber === $movesCount) {
@@ -32,59 +30,11 @@ while ($iterationNumber <= $movesCount) {
     }
     $currentResponse = generateCalc();
     $actualResponse = getResponse();
-      
+
     if (isResponseCorrect($actualResponse, $currentResponse)) {
         $iterationNumber++;
-    }
-    else {
+    } else {
         showFailMessage($name, $actualResponse, $currentResponse);
         break;
     }
 }
-
-/*
-
-$name = BrainGames\Engine\greeting();
-
-print_r ("Welcome to the Brain Games!
-What is the result of the expression?.
-\n");
-
-$trueCount = 0;
-$movesNum = 3;
-$operands = ['+', '-', '*'];
-
- 
-while ($trueCount < $movesNum) {
-    $randomNumber1 = rand(1, 99);
-    $randomNumber2 = rand(1, 99);
-    $numOperand = rand(0, 2);
-    switch ($numOperand) {
-        case 0:
-            $currentResponse = $randomNumber1 + $randomNumber2;
-            break;
-        case 1:
-            $currentResponse = $randomNumber1 - $randomNumber2;
-            break;
-        case 2:
-            $currentResponse = $randomNumber1 * $randomNumber2;
-            break;
-    }
-    
-    //print_r ($currentResponse);
-    print_r ("Question: " . $randomNumber1 . $operands[$numOperand] . $randomNumber2 . ". Your answer: " . "\n");
-    
-
-    $response = trim(fgets(STDIN));
-    if ($response != $currentResponse) {
-        print_r("\"{$response}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!\n");
-        break;
-    }
-
-    $trueCount++;
-    
-    if ($trueCount === $movesNum) {
-        print_r ("Congratulations, " . $name . "!\n");
-    }
-}
-*/

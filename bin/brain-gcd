@@ -17,7 +17,7 @@ if (file_exists($autoloadPath1)) {
 
 $name = greeting();
 
-print_r ("Welcome to the Brain Games!
+print_r("Welcome to the Brain Games!
 Find the greatest common divisor of given numbers.
 \n");
 
@@ -29,13 +29,12 @@ while ($iterationNumber <= $movesCount) {
         showSuccesfulGameEnding($name);
         break;
     }
-    $currentResponse = generateProgression();
+    $currentResponse = generateGCD();
     $actualResponse = getResponse();
-      
+
     if (isResponseCorrect($actualResponse, $currentResponse)) {
         $iterationNumber++;
-    }
-    else {
+    } else {
         showFailMessage($name, $actualResponse, $currentResponse);
         break;
     }

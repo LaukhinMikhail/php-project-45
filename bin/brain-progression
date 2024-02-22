@@ -17,7 +17,7 @@ if (file_exists($autoloadPath1)) {
 
 $name = greeting();
 
-print_r ("Welcome to the Brain Games!
+print_r("Welcome to the Brain Games!
 What number is missing in the progression?
 \n");
 
@@ -31,11 +31,10 @@ while ($iterationNumber <= $movesCount) {
     }
     $currentResponse = generateProgression();
     $actualResponse = getResponse();
-      
+
     if (isResponseCorrect($actualResponse, $currentResponse)) {
         $iterationNumber++;
-    }
-    else {
+    } else {
         showFailMessage($name, $actualResponse, $currentResponse);
         break;
     }

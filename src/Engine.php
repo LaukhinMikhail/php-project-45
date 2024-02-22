@@ -1,15 +1,23 @@
+
 <?php
+/*
 
-//namespace BrainGames\Engine;
+namespace BrainGames\Engine;
 
+Так как все функции проекта описаны в настоящем файле и больше нигде,
+было решено отказаться от неймспейса в угоду удобству
+С другой стороны, я понимаю, что в настоящем проекте этот неймспейс был бы необходим,
+так как в дальнейшем перерабатывать существующий код
+было бы сложнее (когда появилось множество новой логики и пространств имен)
+
+*/
 
 function isResponseCorrect($actualResponse, $currentResponse)
 {
     if ($actualResponse == $currentResponse) {
         //print_r("Current!\n");
         return true;
-    }
-    else {
+    } else {
         return false;
     }
 }
@@ -45,7 +53,7 @@ function getMaximumMovesNumber()
 function generateRemainderOfDivision()
 {
     $randomNumber = rand(1, 99);
-    print_r ("Question: " . $randomNumber . "\n" . "Your answer: " . "\n");
+    print_r("Question: " . $randomNumber . "\n" . "Your answer: " . "\n");
     $currentResponse = $randomNumber % 2 === 0 ? 'Yes' : 'No';
     return $currentResponse;
 }
@@ -67,7 +75,7 @@ function generateCalc()
             $currentResponse = $randomNumber1 * $randomNumber2;
             break;
     }
-    print_r ("Question: " . $randomNumber1 . $operands[$numOperand] . $randomNumber2 . ". Your answer: " . "\n");
+    print_r("Question: " . $randomNumber1 . $operands[$numOperand] . $randomNumber2 . ". Your answer: " . "\n");
     return $currentResponse;
 }
 
@@ -75,7 +83,7 @@ function generateGCD()
 {
     $randomNumber1 = rand(1, 99);
     $randomNumber2 = rand(1, 99);
-    print_r ("Question: " . $randomNumber1 . " " . $randomNumber2 . ". Your answer: " . "\n");
+    print_r("Question: " . $randomNumber1 . " " . $randomNumber2 . ". Your answer: " . "\n");
     $gcd = $randomNumber1 <= $randomNumber2 ? $randomNumber1 : $randomNumber2; //Находим НОД и возвращаем
     while (!($randomNumber1 % $gcd === 0 && $randomNumber2 % $gcd === 0)) {
         $gcd--;
@@ -92,13 +100,13 @@ function generateProgression()
     $progression = [];
     $progression[] = $firstElement;
 
-    for($i = 0; $i <= $porgressionLenght - 1; $i++) {
+    for ($i = 0; $i <= $porgressionLenght - 1; $i++) {
         $firstElement += $progressionStep;
         $progression[] = $firstElement;
     }
     $currentResponse = $progression[$hidenElementPosition];
     $progression[$hidenElementPosition] = '..';
-    print_r ("Question: " . implode(' ', $progression) . ".\nYour answer: ");
+    print_r("Question: " . implode(' ', $progression) . ".\nYour answer: ");
     return $currentResponse;
 }
 
@@ -106,10 +114,10 @@ function generateSimpleNum()
 {
     $randomNumber = rand(2, 99);
     $gcd = $randomNumber - 1;
-    while($randomNumber % $gcd != 0) {
+    while ($randomNumber % $gcd != 0) {
         $gcd--;
     }
     $currentResponse = $gcd === 1 ? 'Yes' : 'No';
-    print_r ("Question: " . $randomNumber . ".\nYour answer: ");
+    print_r("Question: " . $randomNumber . ".\nYour answer: ");
     return $currentResponse;
 }

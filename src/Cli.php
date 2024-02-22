@@ -1,4 +1,7 @@
+
 <?php
+/*
+Логика ниже нигде не используется и была описана на ранних этапах проекта
 
 namespace BrainGames\Cli;
 
@@ -8,7 +11,7 @@ function game()
 
     $name = trim(fgets(STDIN));
     echo "Hello, {$name}!\n";
-    
+
     print_r ("Welcome to the Brain Games!
 Answer \"yes\" if the number is even, otherwise answer \"no\".
 \n\n");
@@ -30,3 +33,4 @@ Answer \"yes\" if the number is even, otherwise answer \"no\".
     }
     print_r ("Congratulations, " . $name . "!\n");
 }
+*/

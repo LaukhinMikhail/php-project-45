@@ -15,5 +15,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-
-//print_r ('Welcome to the Brain Games!');
+//Логика для игр описана в src/Engine.php
