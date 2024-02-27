@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use function BrainGames\Cli\greeting as greeting;
+use function BrainGames\Cli\getName as getName;
 
 
 // Путь который будет использован при глобальной установке пакета
@@ -16,4 +16,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-greeting();
+getName();
