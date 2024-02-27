@@ -16,6 +16,7 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
+
 function greeting()
 {
     line('Welcome to the Brain Game!');
