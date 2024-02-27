@@ -2,6 +2,7 @@
 
 
 <?php
+use function BrainGames\Cli\getName as getName;
 
 // Путь который будет использован при глобальной установке пакета
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
