@@ -15,11 +15,9 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-$name = greeting();
+$name = getName();
 
-print_r("Welcome to the Brain Games!
-What number is missing in the progression?
-\n");
+print_r("What number is missing in the progression?\n");
 
 $movesCount = getMaximumMovesNumber();
 $iterationNumber = 0;

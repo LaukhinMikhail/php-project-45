@@ -15,11 +15,9 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-$name = greeting();
+$name = getName();
 
-print_r("Welcome to the Brain Games!
-Answer \"yes\" if the number is even, otherwise answer \"no\".
-\n");
+print_r("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
 
 $movesCount = getMaximumMovesNumber();
 $iterationNumber = 0;

@@ -15,11 +15,9 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-$name = greeting();
+$name = getName();
 
-print_r("Welcome to the Brain Games!
-Find the greatest common divisor of given numbers.
-\n");
+print_r("Find the greatest common divisor of given numbers.\n");
 
 $movesCount = getMaximumMovesNumber();
 $iterationNumber = 0;

@@ -1,36 +1,26 @@
-
 <?php
-/*
-Логика ниже нигде не используется и была описана на ранних этапах проекта
 
 namespace BrainGames\Cli;
 
-function game()
-{
-    echo "May I have your name?\n";
+use function cli\line;
+use function cli\prompt;
 
-    $name = trim(fgets(STDIN));
-    echo "Hello, {$name}!\n";
+// Путь который будет использован при глобальной установке пакета
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
 
-    print_r ("Welcome to the Brain Games!
-Answer \"yes\" if the number is even, otherwise answer \"no\".
-\n\n");
+// Путь для локальной работы с проектом
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
 
-    $trueCount = 0;
-    $movesNum = 3;
-
-    while ($trueCount < $movesNum) {
-        $randomNumber = rand(1, 99);
-        $currentResponse = $randomNumber % 2 === 0 ? 'Yes' : 'No';
-        print_r ("Question: " . $randomNumber . "\n" . "Your answer: " . "\n");
-
-        $response = trim(fgets(STDIN));
-        if ($response != $currentResponse) {
-            return print_r("\"{$response}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!\n");
-        }
-
-    $trueCount++;
-    }
-    print_r ("Congratulations, " . $name . "!\n");
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
 }
-*/
+
+function getName()
+{
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    return $name;
+}

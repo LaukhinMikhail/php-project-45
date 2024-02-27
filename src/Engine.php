@@ -15,7 +15,7 @@ namespace BrainGames\Engine;
 function isResponseCorrect($actualResponse, $currentResponse)
 {
     if ($actualResponse == $currentResponse) {
-        //print_r("Correct!\n");
+        print_r("Correct!\n");
         return true;
     } else {
         return false;
@@ -37,11 +37,17 @@ function getResponse()
     return trim(fgets(STDIN));
 }
 
-function greeting()
+function showGreetingMessage()
+{
+    echo "Welcome to the Brain Games!\n";
+}
+
+function getName()
 {
     echo "May I have your name?\n";
     $name = trim(fgets(STDIN));
     echo "Hello, {$name}!\n";
+    echo "Welcome to the Brain Games!\n";
     return $name;
 }
 

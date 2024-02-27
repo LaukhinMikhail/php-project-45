@@ -14,11 +14,9 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-$name = greeting();
+$name = getName();
 
-print_r("Welcome to the Brain Games!
-What is the result of the expression?.
-\n");
+print_r("What is the result of the expression?\n");
 
 $movesCount = getMaximumMovesNumber();
 $iterationNumber = 0;
