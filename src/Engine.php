@@ -60,7 +60,7 @@ function generateRemainderOfDivision()
 {
     $randomNumber = rand(1, 99);
     print_r("Question: {$randomNumber}\nYour answer: \n");
-    $currentResponse = $randomNumber % 2 === 0 ? 'Yes' : 'No';
+    $currentResponse = $randomNumber % 2 === 0 ? 'yes' : 'no';
     return $currentResponse;
 }
 
