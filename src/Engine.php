@@ -24,7 +24,7 @@ function showSuccesfulGameEnding(string $name)
 
 function getResponse(): string|bool
 {
-    $response = trim(fgets(STDIN));
+    $response = prompt('');
     return $response;
 }
 
@@ -56,7 +56,7 @@ function getMaximumMovesNumber()
 function generateRemainderOfDivision()
 {
     $randomNumber = rand(1, 99);
-    print_r("Question: {$randomNumber}\nYour answer: \n");
+    print_r("Question: {$randomNumber}\nYour answer");
     $currentResponse = $randomNumber % 2 === 0 ? 'yes' : 'no';
     return $currentResponse;
 }
@@ -79,7 +79,7 @@ function generateCalc()
             break;
     }
     $currentOperand = $operands[$numOperand];
-    print_r("Question: {$randomNumber1} {$currentOperand} {$randomNumber2}. Your answer: \n");
+    print_r("Question: {$randomNumber1} {$currentOperand} {$randomNumber2}. Your answer");
     return $currentResponse;
 }
 
@@ -87,7 +87,7 @@ function generateGCD()
 {
     $randomNumber1 = rand(1, 99);
     $randomNumber2 = rand(1, 99);
-    print_r("Question: {$randomNumber1} {$randomNumber2}. Your answer: \n");
+    print_r("Question: {$randomNumber1} {$randomNumber2}. Your answer");
     $gcd = $randomNumber1 <= $randomNumber2 ? $randomNumber1 : $randomNumber2; //Находим НОД и возвращаем
     while (!($randomNumber1 % $gcd === 0 && $randomNumber2 % $gcd === 0)) {
         $gcd--;
@@ -111,7 +111,7 @@ function generateProgression()
     $currentResponse = $progression[$hidenElementPosition];
     $progression[$hidenElementPosition] = '..';
     $stringProgression = implode(' ', $progression);
-    print_r("Question: {$stringProgression}\nYour answer: ");
+    print_r("Question: {$stringProgression}\nYour answer");
     return $currentResponse;
 }
 
@@ -123,6 +123,6 @@ function generateSimpleNum()
         $gcd--;
     }
     $currentResponse = $gcd === 1 ? 'yes' : 'no';
-    print_r("Question: {$randomNumber}\nYour answer: ");
+    print_r("Question: {$randomNumber}\nYour answer");
     return $currentResponse;
 }
