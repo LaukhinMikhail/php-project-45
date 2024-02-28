@@ -12,7 +12,7 @@ namespace BrainGames\Engine;
 
 */
 
-function isResponseCorrect(string $actualResponse, string $currentResponse)
+function isResponseCorrect(string|int $actualResponse, string|int $currentResponse)
 {
     if ($actualResponse == $currentResponse) {
         print_r("Correct!\n");
@@ -22,7 +22,7 @@ function isResponseCorrect(string $actualResponse, string $currentResponse)
     }
 }
 
-function showFailMessage($name, string $actualResponse, string $currentResponse)
+function showFailMessage(string $name, string|int $actualResponse, string|int $currentResponse)
 {
     return print_r("\"{$actualResponse}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!\n");
 }
@@ -32,7 +32,7 @@ function showSuccesfulGameEnding(string $name)
     return print_r("Congratulations, {$name}!\n");
 }
 
-function getResponse(): string
+function getResponse(): string|bool
 {
     $response = trim(fgets(STDIN));
     return $response;
@@ -43,7 +43,7 @@ function showGreetingMessage()
     echo "Welcome to the Brain Games!\n";
 }
 
-function getName(): string
+function getName(): string|bool
 {
     echo "May I have your name?\n";
     $name = trim(fgets(STDIN));
