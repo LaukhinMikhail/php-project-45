@@ -125,7 +125,7 @@ function generateSimpleNum()
     while ($randomNumber % $gcd != 0) {
         $gcd--;
     }
-    $currentResponse = $gcd === 1 ? 'Yes' : 'No';
+    $currentResponse = $gcd === 1 ? 'yes' : 'no';
     print_r("Question: {$randomNumber}\nYour answer: ");
     return $currentResponse;
 }
