@@ -42,7 +42,6 @@ function showGreetingMessage()
     echo "Welcome to the Brain Games!\n";
 }
 
-/*
 function getName()
 {
     echo "May I have your name?\n";
@@ -51,7 +50,6 @@ function getName()
     echo "Welcome to the Brain Games!\n";
     return $name;
 }
-*/
 
 function getMaximumMovesNumber()
 {
