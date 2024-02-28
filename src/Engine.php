@@ -22,7 +22,7 @@ function showSuccesfulGameEnding(string $name)
     return print_r("Congratulations, {$name}!\n");
 }
 
-function getResponse(): string|bool
+function getResponse()
 {
     $response = prompt('');
     return $response;
@@ -33,7 +33,7 @@ function showGreetingMessage()
     echo "Welcome to the Brain Games!\n";
 }
 
-function getName(): string|bool
+function getName()
 {
     /*
     echo "May I have your name?\n";
