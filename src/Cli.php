@@ -20,7 +20,7 @@ if (file_exists($autoloadPath1)) {
 function getName()
 {
     line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
+    $name = prompt("May I have your name?\n", false, "");
     line("Hello, %s!", $name);
     return $name;
 }
