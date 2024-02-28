@@ -1,16 +1,6 @@
-
 <?php
-/*
 
-namespace BrainGames\Engine;
-
-Так как все функции проекта описаны в настоящем файле и больше нигде,
-было решено отказаться от неймспейса в угоду удобству
-С другой стороны, я понимаю, что в настоящем проекте этот неймспейс был бы необходим,
-так как в дальнейшем перерабатывать существующий код
-было бы сложнее (когда появилось множество новой логики и пространств имен)
-
-*/
+use function cli\prompt;
 
 function isResponseCorrect(string|int $actualResponse, string|int $currentResponse)
 {
@@ -45,8 +35,14 @@ function showGreetingMessage()
 
 function getName(): string|bool
 {
+    /*
     echo "May I have your name?\n";
     $name = trim(fgets(STDIN));
+    echo "Hello, {$name}!\n";
+    echo "Welcome to the Brain Games!\n";
+    */
+    //echo "May I have your name?\n";
+    $name = prompt("May I have your name?\n");
     echo "Hello, {$name}!\n";
     echo "Welcome to the Brain Games!\n";
     return $name;
