@@ -20,11 +20,11 @@ if your answer is correct, the following question will be asked. If the answer i
 To complete the game, you need to answer correctly 3 times.
 
 ### Game list:
-**brain-even:** Answer "yes" if the number is even, otherwise answer "no".
-**brain-calc:** Find the result of the expression.
-**brain-prime:** Answer "yes" if given number is prime. Otherwise answer "no".
-**brain-gcd:** Find the greatest common divisor of given numbers.
-**brain-progression:** What number is missing in the progression.
+- **brain-even:** Answer "yes" if the number is even, otherwise answer "no".
+- **brain-calc:** Find the result of the expression.
+- **brain-prime:** Answer "yes" if given number is prime. Otherwise answer "no".
+- **brain-gcd:** Find the greatest common divisor of given numbers.
+- **brain-progression:** What number is missing in the progression.
 
 ### Brain-even. Usage cases:
 Try to make install in project:
