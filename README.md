@@ -3,6 +3,29 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/30ec7ff363754fcc95a9/maintainability)](https://codeclimate.com/github/LaukhinMikhail/php-project-45/maintainability)
 
+### How to install the game
+If you want try the brain-games, you should follow the simple steps:
+1. Download the repository from GitHub (you can use "git clone...");
+2. Open the terminal. Go to project directory (the rep that you downloaded);
+3. Run the command "make install" to install the game (you should have installed composer);
+4. Use command "make *name of the game*" to start.
+
+**How to install video:** https://asciinema.org/a/uwd3u676XxLJcsnTVZt2DorTZ
+
+### How to play
+Start game using "make" command.
+After starting the game, you must first enter your name (write the name and click Enter).
+The game will ask you questions. Enter the answer and click "Enter".
+if your answer is correct, the following question will be asked. If the answer is incorrect, the game is over.
+To complete the game, you need to answer correctly 3 times.
+
+### Game list:
+**brain-even:** Answer "yes" if the number is even, otherwise answer "no".
+**brain-calc:** Find the result of the expression.
+**brain-prime:** Answer "yes" if given number is prime. Otherwise answer "no".
+**brain-gcd:** Find the greatest common divisor of given numbers.
+**brain-progression:** What number is missing in the progression.
+
 ### Brain-even. Usage cases:
 Try to make install in project:
 https://asciinema.org/a/wTFIOnhv1XDchQLEgJcGhtn24
