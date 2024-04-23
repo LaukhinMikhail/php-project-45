@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Engine\Prime;
+namespace BrainGames\Engine\Progresison;
 
 use function BrainGames\Cli\getName as getName;
 use function BrainGames\Engine\getMaximumMovesNumber as getMaximumMovesNumber;
