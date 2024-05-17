@@ -2,3 +2,46 @@
 <?php
 
 require_once(__DIR__ . '/../src/Games/brainEven.php');
+
+// Путь который будет использован при глобальной установке пакета
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+
+// Путь для локальной работы с проектом
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+use function BrainGames\Cli\getName as getName;
+use function BrainGames\Engine\getMaximumMovesNumber as getMaximumMovesNumber;
+use function BrainGames\Engine\showSuccesfulGameEnding as showSuccesfulGameEnding;
+use function BrainGames\Engine\getResponse as getResponse;
+use function BrainGames\Engine\isResponseCorrect as isResponseCorrect;
+use function BrainGames\Engine\showFailMessage as showFailMessage;
+use function BrainGames\Engine\Even\getEven as getEven;
+use function cli\line as line;
+
+$movesCount = getMaximumMovesNumber();
+$gameResult = true;
+
+$name = getName();
+line("Answer \"yes\" if the number is even, otherwise answer \"no\".\n");
+for ($i = 0; $i < $movesCount; $i++) {
+    $gameData = getEven();
+    $currentResponse = $gameData['response'];
+    $question = $gameData['question'];
+    line("Question: {$question}");
+    $playerResponse = getResponse();
+    if (isResponseCorrect($playerResponse, $currentResponse) === false) {
+        showFailMessage($name, $playerResponse, $currentResponse);
+        $gameResult = false;
+        break;
+    }
+}
+
+if ($gameResult === true) {
+    showSuccesfulGameEnding($name);
+}

@@ -4,7 +4,7 @@ namespace BrainGames\Engine;
 
 use function cli\prompt;
 
-function isResponseCorrect(string|int $actualResponse, string|int $currentResponse)
+function isResponseCorrect($actualResponse, $currentResponse)
 {
     if ($actualResponse == $currentResponse) {
         print_r("Correct!\n");
