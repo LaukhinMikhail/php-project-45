@@ -3,11 +3,12 @@
 namespace BrainGames\Engine;
 
 use function cli\prompt;
+use function cli\line;
 
 function isResponseCorrect(string|int $actualResponse, string|int $currentResponse)
 {
     if ($actualResponse == $currentResponse) {
-        print_r("Correct!\n");
+        line("Correct!");
         return true;
     } else {
         return false;
@@ -16,12 +17,12 @@ function isResponseCorrect(string|int $actualResponse, string|int $currentRespon
 
 function showFailMessage(string $name, string|int $actualResponse, string|int $currentResponse)
 {
-    return print_r("\"{$actualResponse}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!\n");
+    return line("\"{$actualResponse}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!");
 }
 
 function showSuccesfulGameEnding(string $name)
 {
-    return print_r("Congratulations, {$name}!\n");
+    return line("Congratulations, {$name}!");
 }
 
 function getResponse()
@@ -32,14 +33,14 @@ function getResponse()
 
 function showGreetingMessage()
 {
-    echo "Welcome to the Brain Games!\n";
+    line("Welcome to the Brain Games!");
 }
 
 function getName()
 {
     $name = prompt("May I have your name?\n", false, "");
-    echo "Hello, {$name}!\n";
-    echo "Welcome to the Brain Games!\n";
+    line("Hello, {$name}!");
+    line("Welcome to the Brain Games!");
     return $name;
 }
 
