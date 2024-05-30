@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-require_once(__DIR__ . '/../src/Games/brainEven.php');
+require_once(__DIR__ . '/../src/Games/BrainEven.php');
 
 // Путь который будет использован при глобальной установке пакета
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
