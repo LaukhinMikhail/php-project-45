@@ -19,4 +19,4 @@ use function BrainGames\Engine\startGame;
 use function BrainGames\Engine\getMaximumMovesNumber;
 use function BrainGames\Engine\Prime\getPrimeGameData;
 
-startGame("Answer \"yes\" if given number is prime. Otherwise answer \"no\.", getPrimeGameData(getMaximumMovesNumber()));
+startGame("Answer \"yes\" if given number is prime. Otherwise answer \"no\".", getPrimeGameData(getMaximumMovesNumber()));
