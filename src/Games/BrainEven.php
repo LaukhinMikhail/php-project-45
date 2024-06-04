@@ -2,7 +2,7 @@
 
 namespace BrainGames\Engine\Even;
 
-function getEvenGameData($movesCount)
+function getEvenGameData(int $movesCount)
 {
     $result = [];
 

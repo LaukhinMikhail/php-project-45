@@ -2,7 +2,7 @@
 
 namespace BrainGames\Engine\Calc;
 
-function getCalcGameData($movesCount)
+function getCalcGameData(int $movesCount)
 {
     $result = [];
     $operands = ['+', '-', '*'];

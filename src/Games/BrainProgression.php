@@ -2,7 +2,7 @@
 
 namespace BrainGames\Engine\Progressison;
 
-function getProgressionGameData($movesCount)
+function getProgressionGameData(int $movesCount)
 {
     $result = [];
 

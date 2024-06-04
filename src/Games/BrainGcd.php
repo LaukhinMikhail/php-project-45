@@ -2,7 +2,7 @@
 
 namespace BrainGames\Engine\Gcd;
 
-function getGcdGameData($movesCount)
+function getGcdGameData(int $movesCount)
 {
     $result = [];
 

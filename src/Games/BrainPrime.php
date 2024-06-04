@@ -2,7 +2,7 @@
 
 namespace BrainGames\Engine\Prime;
 
-function getPrimeGameData($movesCount)
+function getPrimeGameData(int $movesCount)
 {
     $result = [];
     for ($i = 0; $i < $movesCount; $i++) {
