@@ -48,3 +48,27 @@ function getMaximumMovesNumber()
 {
     return 3;
 }
+
+function startGame($description, callable $gameFunction)
+{
+    $movesCount = 3;
+    $gameResult = true;
+    $name = getName();
+    line($description);
+
+    for ($i = 0; $i < $movesCount; $i++) {
+        $gameData = $gameFunction(); //Хочу здесь вызвать функцию из модуля игры, которая подготавливает данные
+        $currentResponse = $gameData['response'];
+        $question = $gameData['question'];
+        line("Question: {$question}");
+        $playerResponse = getResponse();
+        if (isResponseCorrect($playerResponse, $currentResponse) === false) {
+            showFailMessage($name, $playerResponse, $currentResponse);
+            $gameResult = false;
+            break;
+        }
+    }
+    if ($gameResult === true) {
+        showSuccesfulGameEnding($name);
+    }
+}
