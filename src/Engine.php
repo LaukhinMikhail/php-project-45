@@ -50,7 +50,7 @@ function getMaximumMovesNumber()
     return 3;
 }
 
-function startGame($description, $gameData)
+function startGame(string $description, array $gameData)
 {
     $gameResult = true;
     $name = getName();

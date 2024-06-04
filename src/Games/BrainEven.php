@@ -14,7 +14,7 @@ function getEvenGameData(int $movesCount)
     return $result;
 }
 
-function isNumEven($number)
+function isNumEven(int $number)
 {
     return $number % 2 === 0 ? 'yes' : 'no';
 }

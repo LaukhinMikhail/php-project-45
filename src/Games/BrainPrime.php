@@ -13,7 +13,7 @@ function getPrimeGameData(int $movesCount)
     return $result;
 }
 
-function isPrime($number)
+function isPrime(int $number)
 {
     $gcd = $number - 1;
     while ($number % $gcd !== 0) {

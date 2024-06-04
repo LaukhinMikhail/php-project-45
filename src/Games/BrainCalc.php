@@ -16,7 +16,7 @@ function getCalcGameData(int $movesCount)
     }
     return $result;
 }
-function calculate($num1, $num2, $operand)
+function calculate(int $num1, int $num2, string $operand)
 {
     switch ($operand) {
         case '+':
