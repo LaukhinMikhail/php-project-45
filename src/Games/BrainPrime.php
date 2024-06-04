@@ -2,13 +2,14 @@
 
 namespace BrainGames\Engine\Prime;
 
-function getPrimeNum()
+function getPrimeGameData($movesCount)
 {
     $result = [];
-    $randomNumber = rand(2, 99);
-    $currentResponse = isPrime($randomNumber);
-    $result['question'] = $randomNumber;
-    $result['response'] = $currentResponse;
+    for ($i = 0; $i < $movesCount; $i++) {
+        $randomNumber = rand(2, 99);
+        $currentResponse = isPrime($randomNumber);
+        $result[] = ['question' => $randomNumber, 'response' => $currentResponse];
+    }
     return $result;
 }
 

@@ -2,13 +2,15 @@
 
 namespace BrainGames\Engine\Even;
 
-function getEven()
+function getEvenGameData($movesCount)
 {
     $result = [];
-    $randomNumber = rand(1, 99);
-    $currentResponse = isNumEven($randomNumber);
-    $result['question'] = $randomNumber;
-    $result['response'] = $currentResponse;
+
+    for ($i = 0; $i < $movesCount; $i++) {
+        $randomNumber = rand(1, 99);
+        $currentResponse = isNumEven($randomNumber);
+        $result[] = ['question' => $randomNumber, 'response' => $currentResponse];
+    }
     return $result;
 }
 

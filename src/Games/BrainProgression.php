@@ -2,25 +2,27 @@
 
 namespace BrainGames\Engine\Progressison;
 
-function getProgression()
+function getProgressionGameData($movesCount)
 {
     $result = [];
-    $porgressionLenght = rand(5, 10);
-    $hidenElementPosition = rand(0, $porgressionLenght - 1);
-    $progressionStep = rand(2, 50);
-    $firstElement = rand(2, 30);
-    $progression = [];
-    $progression[] = $firstElement;
 
-    for ($i = 0; $i <= $porgressionLenght - 1; $i++) {
-        $firstElement += $progressionStep;
+    for ($i = 0; $i < $movesCount; $i++) {
+        $progressionLenght = rand(5, 10);
+        $hidenElementPosition = rand(0, $progressionLenght - 1);
+        $progressionStep = rand(2, 50);
+        $firstElement = rand(2, 30);
+        $progression = [];
         $progression[] = $firstElement;
-    }
 
-    $currentResponse = $progression[$hidenElementPosition];
-    $progression[$hidenElementPosition] = '..';
-    $progression = implode(' ', $progression);
-    $result['question'] = $progression;
-    $result['response'] = $currentResponse;
+        for ($j = 0; $j <= $progressionLenght - 1; $j++) {
+            $firstElement += $progressionStep;
+            $progression[] = $firstElement;
+        }
+
+        $currentResponse = $progression[$hidenElementPosition];
+        $progression[$hidenElementPosition] = '..';
+        $progression = implode(' ', $progression);
+        $result[] = ['question' => $progression, 'response' => $currentResponse];
+    }
     return $result;
 }

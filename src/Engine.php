@@ -17,7 +17,8 @@ function isResponseCorrect(string|int $actualResponse, string|int $currentRespon
 
 function showFailMessage(string $name, string|int $actualResponse, string|int $currentResponse)
 {
-    return line("\"{$actualResponse}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\nLet's try again, {$name}!");
+    return line("\"{$actualResponse}\" is wrong answer ;(. Correct answer was \"{$currentResponse}\".\n
+    Let's try again, {$name}!");
 }
 
 function showSuccesfulGameEnding(string $name)
@@ -49,17 +50,15 @@ function getMaximumMovesNumber()
     return 3;
 }
 
-function startGame($description, callable $gameFunction)
+function startGame($description, $gameData)
 {
-    $movesCount = 3;
     $gameResult = true;
     $name = getName();
     line($description);
 
-    for ($i = 0; $i < $movesCount; $i++) {
-        $gameData = $gameFunction(); //Хочу здесь вызвать функцию из модуля игры, которая подготавливает данные
-        $currentResponse = $gameData['response'];
-        $question = $gameData['question'];
+    foreach ($gameData as $value) {
+        $currentResponse = $value['response'];
+        $question = $value['question'];
         line("Question: {$question}");
         $playerResponse = getResponse();
         if (isResponseCorrect($playerResponse, $currentResponse) === false) {
